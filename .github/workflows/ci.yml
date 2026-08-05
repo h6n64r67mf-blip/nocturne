@@ -17,13 +17,14 @@ jobs:
           node-version: '18'
       - name: Install
         run: |
-          cd nocturne/web
+          cd web
+
           npm ci
       - name: Build
         run: |
-          cd nocturne/web
+         web
           npm run build
       - name: Run tests
         run: |
-          cd nocturne/web
+          cd web
           echo "No tests configured"
