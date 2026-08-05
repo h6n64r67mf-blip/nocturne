@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050505;
+  --panel: #070707;
+  --text: #E7E6E6;
+  --muted: #9C9A9A;
+  --accent: #C9A66B; /* gold */
+  --accent-2: #7B1F2A; /* wine */
+  --deep-ash: #1f1f1f;
+}
+
+html,body,#__next { background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+h1,h2,h3,h4,h5 { font-family: Merriweather, serif; }
+
+/* Utility classes */
+.text-goldAccent { color: var(--accent); }
+.bg-goldAccent { background-color: var(--accent); }
+.text-wine { color: var(--accent-2); }
+.bg-deepPanel { background: linear-gradient(180deg, var(--panel), rgba(10,10,10,0.6)); }
+
+/* shutter effect used when capturing Dark Real */
+.shutter::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  animation: shutter 220ms ease-in-out;
+  z-index: 9999;
+}
+@keyframes shutter {
+  0% { opacity: 0 }
+  40% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+/* focus visible improvements */
+*:focus { outline: none }
+:focus-visible { outline: 2px dashed var(--accent); outline-offset: 2px }
+
